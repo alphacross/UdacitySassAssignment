@@ -13,9 +13,17 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "css-loader": "^3.6.0",
+    "dotenv": "^16.3.1",
     "express": "^4.17.1",
+    "sass": "^1.63.5",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "workbox-webpack-plugin": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
