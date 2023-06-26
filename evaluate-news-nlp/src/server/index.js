@@ -4,12 +4,10 @@ var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 const cors = require('cors');
-const bodyParser = require('body-parser');
 
 const app = express()
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded())
+app.use(express.json())
 app.use(express.static('dist'))
 app.use(cors());
 
@@ -29,13 +27,13 @@ app.post('/test', async function (req, res) {
 
     formData.append('key', process.env.API_KEY);
     formData.append('lang', 'auto');
-    formData.append('txt', req.body.txt);
-    formData.append('of', 'json');
+    formData.append('url', req.body.url);
 
     const response = await fetch('https://api.meaningcloud.com/sentiment-2.1', {
         method: 'POST',
         body: formData
     });
+
     res.send(await response.json());
 })
 
